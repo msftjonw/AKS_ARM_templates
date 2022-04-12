@@ -13,3 +13,6 @@ Create AKS with the created virtual network <br/>
 
 ## Install Kubernetes CLI
     az aks install-cli
+    
+## Get AKS cluster credential
+    az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
