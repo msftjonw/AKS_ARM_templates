@@ -4,8 +4,9 @@
     "parameters": {
         "resourceName": {
             "type": "string",
+            "defaultValue": "<alias>azcniaks",
             "metadata": {
-                "description": "The name of the Managed Cluster resource."
+                "description": "Please replace alias with your alias. The naming convention is to help you distinguish each AKS cluster when you have many in the subscription. The name of the Managed Cluster resource."
             }
         },
         "location": {
@@ -89,13 +90,6 @@
                 "description": "Boolean flag to turn on and off secret store CSI driver."
             }
         },
-        "vnetName": {
-            "type": "string",
-            "defaultValue": null,
-            "metadata": {
-                "description": "Please put down the virtual network name you created in the previous step."
-            }
-        },
         "vnetSubnetID": {
             "type": "string",
             "defaultValue": "<virtual network resource URI>/subnets/<subnet name>",
@@ -128,9 +122,6 @@
     "resources": [
         {
             "apiVersion": "2021-07-01",
-            "dependsOn": [
-                "[concat('Microsoft.Network/virtualNetworks/',parameters('vnetName'))]"
-            ],
             "type": "Microsoft.ContainerService/managedClusters",
             "location": "[parameters('location')]",
             "name": "[parameters('resourceName')]",

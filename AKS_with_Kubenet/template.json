@@ -6,7 +6,7 @@
             "type": "string",
             "defaultValue": "<alias>kubenetaks",
             "metadata": {
-                "description": "Please replace alias with your alias. The naming convention is to help you distinguish each AKS cluster when you have many in the subscription.The name of the Managed Cluster resource."
+                "description": "Please replace alias with your alias. The naming convention is to help you distinguish each AKS cluster when you have many in the subscription. The name of the Managed Cluster resource."
             }
         },
         "location": {
