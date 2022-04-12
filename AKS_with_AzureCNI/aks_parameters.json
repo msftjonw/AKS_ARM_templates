@@ -3,19 +3,19 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "resourceName": {
-            "value": null
+            "value": "jonwtestazcniaks"
         },
         "location": {
-            "value": "[resourceGroup().location]"
-          },
+            "value": "westus3"
+        },
         "dnsPrefix": {
-            "value": null
+            "value": "dns-jonwtestazcniaks"
         },
         "kubernetesVersion": {
             "value": "1.21.9"
         },
         "networkPlugin": {
-            "value": "kubenet"
+            "value": "azure"
         },
         "enableRBAC": {
             "value": true
@@ -34,6 +34,18 @@
         },
         "vmssNodePool": {
             "value": true
+        },
+        "vnetSubnetID": {
+            "value": "/subscriptions/2de0c33c-f475-4b47-932c-4788d7d5b84e/resourceGroups/RG-TestAzureCNI/providers/Microsoft.Network/virtualNetworks/VNet-TestAzureCNI/subnets/Subnet-TestAzureCNI"
+        },
+        "serviceCidr": {
+            "value": "10.0.0.0/16"
+        },
+        "dnsServiceIP": {
+            "value": "10.0.0.10"
+        },
+        "dockerBridgeCidr": {
+            "value": "172.17.0.1/16"
         }
     }
 }
