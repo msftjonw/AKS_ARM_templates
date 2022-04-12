@@ -8,7 +8,7 @@
 - Create an Azure virtual network <br/>
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmsftjonw%2FAKS_ARM_templates%2Fmaster%2FAKS_with_AzureCNI%2Fazure_vnet_template.json)
 
-- Get the virtual network resource URI with Azure CLI command/Azure portal
+- Get the virtual network resource URI with Azure CLI command/Azure portal <br/>
     az network vnet subnet list -g <resource group name> --vnet-name <virtual network name> --query "[].id"
 ![image](https://user-images.githubusercontent.com/35560783/163062556-e60bbc05-bcfe-417b-9063-03c7bd9ba8ac.png)
 
