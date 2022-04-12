@@ -17,6 +17,7 @@
         },
         "dnsPrefix": {
             "type": "string",
+            "defaultValue": "dns-<resource name>",
             "metadata": {
                 "description": "Optional DNS prefix to use with hosted Kubernetes API server FQDN."
             }
@@ -90,9 +91,9 @@
         },
         "vnetName": {
             "type": "string",
-            "defaultValue": null
+            "defaultValue": null,
             "metadata": {
-                "description": "The virtual network name you just created in the previous step."
+                "description": "Please put down the virtual network name you created in the previous step."
             }
         },
         "vnetSubnetID": {
@@ -203,60 +204,6 @@
             "identity": {
                 "type": "SystemAssigned"
             }
-        },
-        {
-            "apiVersion": "2020-11-01",
-            "name": "VNet-TestAzureCNI",
-            "type": "Microsoft.Network/virtualNetworks",
-            "location": "westus3",
-            "properties": {
-                "subnets": [
-                    {
-                        "name": "Subnet-TestAzureCNI",
-                        "id": "/subscriptions/2de0c33c-f475-4b47-932c-4788d7d5b84e/resourceGroups/RG-TestAzureCNI/providers/Microsoft.Network/virtualNetworks/VNet-TestAzureCNI/subnets/Subnet-TestAzureCNI",
-                        "properties": {
-                            "addressPrefix": "10.240.0.0/16"
-                        }
-                    }
-                ],
-                "addressSpace": {
-                    "addressPrefixes": [
-                        "10.0.0.0/8"
-                    ]
-                }
-            },
-            "tags": {}
-        },
-        {
-            "type": "Microsoft.Resources/deployments",
-            "name": "ClusterSubnetRoleAssignmentDeployment-20220412111525",
-            "apiVersion": "2017-05-10",
-            "resourceGroup": "RG-TestAzureCNI",
-            "subscriptionId": "2de0c33c-f475-4b47-932c-4788d7d5b84e",
-            "properties": {
-                "mode": "Incremental",
-                "template": {
-                    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-                    "contentVersion": "1.0.0.0",
-                    "parameters": {},
-                    "variables": {},
-                    "resources": [
-                        {
-                            "type": "Microsoft.Network/virtualNetworks/subnets/providers/roleAssignments",
-                            "apiVersion": "2018-09-01-preview",
-                            "name": "VNet-TestAzureCNI/Subnet-TestAzureCNI/Microsoft.Authorization/2b2fb86c-1a72-43de-8c19-90ea0d440248",
-                            "properties": {
-                                "roleDefinitionId": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Authorization/roleDefinitions/', '4d97b98b-1d4f-4787-a291-c67834d212e7')]",
-                                "principalId": "[reference(parameters('resourceName'),'2021-07-01','Full').identity.principalId]",
-                                "scope": "/subscriptions/2de0c33c-f475-4b47-932c-4788d7d5b84e/resourceGroups/RG-TestAzureCNI/providers/Microsoft.Network/virtualNetworks/VNet-TestAzureCNI/subnets/Subnet-TestAzureCNI"
-                            }
-                        }
-                    ]
-                }
-            },
-            "dependsOn": [
-                "Microsoft.Network/virtualNetworks/VNet-TestAzureCNI"
-            ]
         }
     ],
     "outputs": {
