@@ -5,9 +5,6 @@
         "resourceName": {
             "value": null
         },
-        "location": {
-            "value": "[resourceGroup().location]"
-        },
         "dnsPrefix": {
             "value": null
         },
