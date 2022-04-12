@@ -21,24 +21,16 @@
                 "description": "Optional DNS prefix to use with hosted Kubernetes API server FQDN."
             }
         },
-        "osDiskSizeGB": {
-            "type": "int",
-            "defaultValue": 0,
-            "metadata": {
-                "description": "Disk size (in GiB) to provision for each of the agent pool nodes. This value ranges from 0 to 1023. Specifying 0 will apply the default disk size for that agentVMSize."
-            },
-            "minValue": 0,
-            "maxValue": 1023
-        },
         "kubernetesVersion": {
             "type": "string",
-            "defaultValue": "1.7.7",
+            "defaultValue": "1.21.9",
             "metadata": {
                 "description": "The version of Kubernetes."
             }
         },
         "networkPlugin": {
             "type": "string",
+            "defaultValue": "kubenet",
             "allowedValues": [
                 "azure",
                 "kubenet"
@@ -56,7 +48,7 @@
         },
         "vmssNodePool": {
             "type": "bool",
-            "defaultValue": false,
+            "defaultValue": true,
             "metadata": {
                 "description": "Boolean flag to turn on and off of virtual machine scale sets"
             }
@@ -77,7 +69,7 @@
         },
         "enableHttpApplicationRouting": {
             "type": "bool",
-            "defaultValue": true,
+            "defaultValue": false,
             "metadata": {
                 "description": "Boolean flag to turn on and off http application routing."
             }
@@ -111,7 +103,7 @@
                 "agentPoolProfiles": [
                     {
                         "name": "agentpool",
-                        "osDiskSizeGB": "[parameters('osDiskSizeGB')]",
+                        "osDiskSizeGB": "30",
                         "count": 3,
                         "enableAutoScaling": false,
                         "vmSize": "Standard_D2s_v3",
@@ -126,7 +118,7 @@
                     },
                     {
                         "name": "userpool",
-                        "osDiskSizeGB": "[parameters('osDiskSizeGB')]",
+                        "osDiskSizeGB": "30",
                         "count": 3,
                         "enableAutoScaling": false,
                         "vmSize": "Standard_D2s_v3",
