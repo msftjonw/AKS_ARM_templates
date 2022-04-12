@@ -17,6 +17,7 @@
         },
         "dnsPrefix": {
             "type": "string",
+            "defaultValue": "dns-[parameters('resourceName')]",
             "metadata": {
                 "description": "Optional DNS prefix to use with hosted Kubernetes API server FQDN."
             }
