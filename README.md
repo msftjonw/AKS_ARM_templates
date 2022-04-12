@@ -1,5 +1,5 @@
 ## Install Azure CLI on your client machine
-[Windows](https://aka.ms/installazurecliwindows)
+Download the tool here for [Windows](https://aka.ms/installazurecliwindows). <br/>
 Look for other platforms [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) if you are not on Windows.
 
 ## Install Kubernetes CLI
