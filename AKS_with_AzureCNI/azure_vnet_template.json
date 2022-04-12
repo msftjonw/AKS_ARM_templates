@@ -2,9 +2,6 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "resourceGroup": {
-            "type": "string"
-        },
         "location": {
             "type": "string",
             "defaultValue": "[resourceGroup().location]",
@@ -12,15 +9,12 @@
                 "description": "The location of the virtual network."
             }
         },
-        "extendedLocation": {
-            "type": "object"
-        },
         "virtualNetworkName": {
             "type": "string"
         },
         "addressSpaces": {
             "type": "array",
-            "defaultValue": [
+			"defaultValue": [
                 "10.0.0.0/8"
             ]
         },
@@ -28,15 +22,12 @@
             "type": "bool",
             "defaultValue": false
         },
-        "subnetCount": {
-            "type": "int"
-        },
         "subnet0_name": {
             "type": "string"
         },
         "subnet0_addressRange": {
             "type": "string",
-            "defaultValue": "10.240.0.0/16"
+			"defaultValue": "10.240.0.0/16"
         },
         "ddosProtectionPlanEnabled": {
             "type": "bool",
@@ -58,7 +49,6 @@
             "type": "Microsoft.Network/VirtualNetworks",
             "apiVersion": "2021-01-01",
             "location": "[parameters('location')]",
-            "extendedLocation": "[if(empty(parameters('extendedLocation')), json('null'), parameters('extendedLocation'))]",
             "dependsOn": [],
             "tags": {},
             "properties": {
