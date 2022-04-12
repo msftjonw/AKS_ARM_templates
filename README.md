@@ -21,6 +21,12 @@
 Download the tool here for [Windows](https://aka.ms/installazurecliwindows). <br/>
 Look for other platforms [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) if you are not on Windows.
 
+## Login with Azure CLI
+    az login
+
+## Select the correct subscription
+    az account set -s <subscription ID/name>
+
 ## Install Kubernetes CLI
     az aks install-cli
     
