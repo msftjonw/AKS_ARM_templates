@@ -6,14 +6,21 @@
             "type": "string",
             "defaultValue": "<alias>kubenetaks",
             "metadata": {
-                "description": "Please replace <alias> with your alias. The naming convention is to help you distinguish each AKS cluster when you have many in the subscription.The name of the Managed Cluster resource."
+                "description": "Please replace alias with your alias. The naming convention is to help you distinguish each AKS cluster when you have many in the subscription.The name of the Managed Cluster resource."
+            }
+        },
+        "location": {
+            "type": "string",
+            "defaultValue": "[resourceGroup().location]",
+            "metadata": {
+                "description": "The location of the Managed Cluster resource."
             }
         },
         "dnsPrefix": {
             "type": "string",
             "defaultValue": "dns-<resource name>",
             "metadata": {
-                "description": "Please replace <resource name> with the name you provide for this AKS cluster. Optional DNS prefix to use with hosted Kubernetes API server FQDN."
+                "description": "Please replace resource name with the name you provide for this AKS cluster. Optional DNS prefix to use with hosted Kubernetes API server FQDN."
             }
         },
         "kubernetesVersion": {
