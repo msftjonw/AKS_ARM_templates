@@ -20,7 +20,7 @@
             "type": "string",
             "defaultValue": "dns-<resource name>",
             "metadata": {
-                "description": "Optional DNS prefix to use with hosted Kubernetes API server FQDN."
+                "description": "Please replace resource name with the name you provide for this AKS cluster. Optional DNS prefix to use with hosted Kubernetes API server FQDN."
             }
         },
         "kubernetesVersion": {
@@ -92,7 +92,7 @@
         },
         "vnetSubnetID": {
             "type": "string",
-            "defaultValue": "<virtual network resource URI>/subnets/<subnet name>",
+            "defaultValue": "<virtual network subnet resource URI>",
             "metadata": {
                 "description": "Please replace virtual network resource URI and subnet name. Resource ID of virtual network subnet used for nodes and/or pods IP assignment."
             }
