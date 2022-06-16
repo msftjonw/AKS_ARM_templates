@@ -17,11 +17,10 @@
 
 ---
 
-## Install Azure CLI on your client machine
-Download the tool here for [Windows](https://aka.ms/installazurecliwindows). <br/>
-Look for other platforms [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) if you are not on Windows.
+## Install Azure CLI in the local machine
+https://docs.microsoft.com/en-us/cli/azure/install-azure-cli#install
 
-## Login with Azure CLI
+## Login to Azure with an user or AAD service principal with Azure RBAC contributor permissions.
     az login
 
 ## Select the correct subscription
